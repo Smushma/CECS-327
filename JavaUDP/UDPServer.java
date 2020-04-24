@@ -30,7 +30,7 @@ public class UDPServer {
                 );
 
                 datagramSocket.send(response);
-            }
+            } // Ctrl + C in CLI to kill the program
         }
         catch (SocketException e) {
             System.out.println("SocketException: " + e.getMessage());

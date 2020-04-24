@@ -1,0 +1,14 @@
+To compile the java files (via CLI and assuming you have set up your JDK path):
+javac UDPServer.java
+javac UDPClient.java
+
+To run the server, enter a port number as follows:
+java UDPServer <port>
+EX:
+java UDPServer 6789
+To kill the server, Crl + C in the command line
+
+To run the client, the command format is:
+java UDPClient <ip-address> <port> <message>
+EX:
+java UDPClient 192.168.111.111 9999 "CECS 327"
