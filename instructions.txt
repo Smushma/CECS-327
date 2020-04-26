@@ -6,7 +6,7 @@ To run the server, enter a port number as follows:
 java UDPServer <port>
 EX:
 java UDPServer 6789
-To kill the server, Crl + C in the command line
+To kill the server, Ctrl + C in the command line
 
 To run the client, the command format is:
 java UDPClient <ip-address> <port> <message>
