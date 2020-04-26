@@ -17,6 +17,7 @@ public class UDPServer {
             // Continuously listen on the port and echo data back to client
             while (true) {
                 byte[] buffer = new byte[100];
+                // The request is echoing back the data received from the client
                 DatagramPacket request = new DatagramPacket(buffer, buffer.length);
                 datagramSocket.receive(request);
                 System.out.println("Received message: " + new String(request.getData()));
@@ -25,7 +26,7 @@ public class UDPServer {
                 DatagramPacket response = new DatagramPacket(
                     request.getData(), 
                     request.getLength(), 
-                    request.getAddress(), 
+                    request.getAddress(), // We only need the IP address of the sender if we plan on sending back a message
                     request.getPort() 
                 );
 

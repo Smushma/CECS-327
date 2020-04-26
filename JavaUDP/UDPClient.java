@@ -11,6 +11,7 @@ public class UDPClient {
 
         DatagramSocket datagramSocket = null;
         try {
+            // Establish a new datagram socket
             datagramSocket = new DatagramSocket();
             
             // Initialize with args
@@ -18,13 +19,15 @@ public class UDPClient {
             int serverPort = Integer.parseInt(args[1]);
             byte[] message = args[2].getBytes();
 
-            // Send request packet to server
+            // Send creates and sends request packet to server
             DatagramPacket request = new DatagramPacket(message, message.length, host, serverPort);
             datagramSocket.send(request);
 
             // Receive the response and display to user
             byte[] buffer = new byte[100];
             DatagramPacket response = new DatagramPacket(buffer, buffer.length);
+
+            // Use the same socket that you did for sending
             datagramSocket.receive(response);
             System.out.println("Response from server: " + new String(response.getData()));
         }
