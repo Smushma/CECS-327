@@ -1,17 +1,26 @@
 import java.net.*;
 import java.io.*;
+import java.util.Scanner;
 
 public class UDPServer {
     public static void main(String[] args) {
+		// For CLI version
+		/*
         if (args.length != 1) {
             System.out.println("ERROR: Invalid number of arguments.");
             System.out.println("Usage: java UDPServer <port>");
             return;
         }
-
+		*/
+		
+		System.out.println("Enter a port number for the UDP server:");
+		Scanner scanner = new Scanner(System.in);
+		String portInput = scanner.nextLine();
+		
         DatagramSocket datagramSocket = null;
         try {
-            int serverPort = Integer.parseInt(args[0]);
+            //int serverPort = Integer.parseInt(args[0]);
+			int serverPort = Integer.parseInt(portInput);
             datagramSocket = new DatagramSocket(serverPort);
 
             // Continuously listen on the port and echo data back to client
